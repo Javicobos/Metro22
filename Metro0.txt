@@ -3,9 +3,9 @@ Estrecho | Tetuán | Alvarado
 Alvarado | Estrecho | Cuatro Caminos
 Cuatro Caminos | Alvarado | Ríos Rosas | Canal
 Ríos Rosas | Cuatro Caminos | Iglesia
-Iglesia | Ríos Rosas | Bibao
-Bibao | Iglesia | Tribunal
-Tribunal | Bibao | Gran Vía
+Iglesia | Ríos Rosas | Bilbao
+Bilbao | Iglesia | Tribunal | San Bernardo | Alonso Martínez
+Tribunal | Bilbao | Gran Vía
 Gran Vía | Tribunal | Sol
 Sol | Gran Vía | Tirso de Molina | Ópera | Sevilla | Callao | Lavapiés
 Tirso de Molina | Sol | Antón Martín
@@ -25,5 +25,4 @@ Ventura Rodríguez | Argüelles | Plaza de España
 Plaza de España | Ventura Rodríguez | Callao
 Callao | Plaza de España | Sol
 Lavapiés | Sol
-Bilbao | San Bernardo | Alonso Martínez
 Alonso Martínez | Bilbao

@@ -14,7 +14,7 @@
 #	L3 Moncloa - Lavapiés
 #	L4 Argüelles - Alonso Martínez (this one will let us have some trips that require using three lines, which is nice to test things)
 
-L1 = ["Tetuán", "Estrecho", "Alvarado", "Cuatro Caminos", "Ríos Rosas", "Iglesia", "Bibao", "Tribunal", 
+L1 = ["Tetuán", "Estrecho", "Alvarado", "Cuatro Caminos", "Ríos Rosas", "Iglesia", "Bilbao", "Tribunal", 
 		"Gran Vía", "Sol", "Tirso de Molina", "Antón Martín", "Estación del Arte", "Atocha Renfe"]
 L2 = ["Cuatro Caminos", "Canal", "Quevedo", "San Bernardo", "Noviciado", "Santo Domingo", "Ópera", "Sol", "Sevilla"]
 L3 = ["Moncloa", "Argüelles", "Ventura Rodríguez", "Plaza de España", "Callao", "Sol", "Lavapiés"]
@@ -60,3 +60,39 @@ for i in connections: #export LC_CTYPE="es:ES.UTF-8" //that did something but no
 	for e in i[:-1]:
 		outputFile.write(e + ' | ')
 	outputFile.write(i[-1] + '\n')
+
+def connectTwoStations(station1, station2): #for now this will be gigaslow but let's just make it work
+	bread = []		#for breadth lol
+	trips = 0
+	found = False
+	bread.append([[station1]])
+	foundStationsSimpleList = [station1]
+	while not found:
+		newTripLevel = []
+		for previousList in bread[trips]:
+			for previousStation in previousList:
+				#print previousStation
+				newDestinations = []
+				for neighbor in connections[isStationThere(previousStation)][1:]:
+					if neighbor not in foundStationsSimpleList:
+						newDestinations.append(neighbor)
+						foundStationsSimpleList.append(neighbor)
+						#print connections[isStationThere(previousStation)]
+						if neighbor == station2:
+							print "Found!"
+							previous2 = previousStation
+							trip = []
+							#while previous2 != station1:
+							#	trip.append(previous2)
+							newTripLevel.append(newDestinations)
+							bread.append(newTripLevel)
+							for asd in bread:
+								print asd
+							#print foundStationsSimpleList
+							return True
+				newTripLevel.append(newDestinations)
+		bread.append(newTripLevel)
+		trips += 1
+
+
+cProfile.run('connectTwoStations("Alvarado", "Sevilla")')
