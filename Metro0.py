@@ -94,5 +94,34 @@ def connectTwoStations(station1, station2): #for now this will be gigaslow but l
 		bread.append(newTripLevel)
 		trips += 1
 
+def connectTwoStationsSecondWay(station1, station2):
+	bread = []
+	trips = 0
+	bread.append([(station1,0)])
+	foundStationsSimpleList = [station1]
+	while True:
+		nextTripLevel = []
+		for i,stationTuple in enumerate(bread[trips]):
+			for neighbor in connections[isStationThere(stationTuple[0])][1:]:
+				if neighbor not in foundStationsSimpleList:
+					nextTripLevel.append((neighbor,i))
+					foundStationsSimpleList.append(neighbor)
+					if neighbor == station2:
+						j = i
+						toPrint = [neighbor]
+						print "Puedes ir de " + station1 + ' a ' + station2 + " en " + str(trips + 1) + " viajes pasando por:"
+						while trips > -1:
+							city,j = bread[trips][j]
+							trips -= 1
+							toPrint.append(city)
+						toPrint.reverse()
+						for k,a in enumerate(toPrint):
+							print str(k) + ": " + a
+						return True
+		bread.append(nextTripLevel)
+		trips += 1
 
-cProfile.run('connectTwoStations("Alvarado", "Sevilla")')
+
+
+
+cProfile.run('connectTwoStationsSecondWay("Moncloa", "Tetuán")')
