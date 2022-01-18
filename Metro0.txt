@@ -1,0 +1,29 @@
+Tetuán | Estrecho
+Estrecho | Tetuán | Alvarado
+Alvarado | Estrecho | Cuatro Caminos
+Cuatro Caminos | Alvarado | Ríos Rosas | Canal
+Ríos Rosas | Cuatro Caminos | Iglesia
+Iglesia | Ríos Rosas | Bibao
+Bibao | Iglesia | Tribunal
+Tribunal | Bibao | Gran Vía
+Gran Vía | Tribunal | Sol
+Sol | Gran Vía | Tirso de Molina | Ópera | Sevilla | Callao | Lavapiés
+Tirso de Molina | Sol | Antón Martín
+Antón Martín | Tirso de Molina | Estación del Arte
+Estación del Arte | Antón Martín | Atocha Renfe
+Atocha Renfe | Estación del Arte
+Canal | Cuatro Caminos | Quevedo
+Quevedo | Canal | San Bernardo
+San Bernardo | Quevedo | Noviciado | Argüelles | Bilbao
+Noviciado | San Bernardo | Santo Domingo
+Santo Domingo | Noviciado | Ópera
+Ópera | Santo Domingo | Sol
+Sevilla | Sol
+Moncloa | Argüelles
+Argüelles | Moncloa | Ventura Rodríguez | San Bernardo
+Ventura Rodríguez | Argüelles | Plaza de España
+Plaza de España | Ventura Rodríguez | Callao
+Callao | Plaza de España | Sol
+Lavapiés | Sol
+Bilbao | San Bernardo | Alonso Martínez
+Alonso Martínez | Bilbao
