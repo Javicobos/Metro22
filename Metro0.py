@@ -179,31 +179,30 @@ def connectTwoStationsSecondWay(station1, station2):
 #cProfile.run('connectTwoStationsSecondWay("Casa de Campo", "Hospital del Henares")')
 
 def longestFromStation(station):
-	#if isStationThere(station) == -1:
-	#	print "No conozco esa estación!"
-	#	return False
 	bread = []
 	trips = 0
 	ogIndex = allStationsSimplelist.index(station)
-	bread.append([(station, ogIndex)])
+	bread.append([ogIndex])
 	foundStationsSimpleList = [ogIndex]
 	foundStations = 1
 	totalStations = len(allStationsSimplelist)
 	while True:
 		nextTripLevel = []
+		#bread.append([])
 		for stationVisited in bread[trips]:
-			for neighbor in connections[stationVisited[1]][1:]:
+			for neighbor in connections[stationVisited][1:]:	#neighbor is a (station, i) tuple
 				if neighbor[1] not in foundStationsSimpleList:
-					nextTripLevel.append((neighbor))
+					nextTripLevel.append(neighbor[1])
+					#bread[trips + 1].append(neighbor[1])
 					foundStationsSimpleList.append(neighbor[1])
 					foundStations += 1
 					if foundStations == totalStations:
-						return neighbor[0], trips +1
+						return neighbor[0], trips + 1
 		bread.append(nextTripLevel)
 		trips += 1
 
 
-cProfile.run('longestFromStation("Casa de Campo")')
+#cProfile.run('longestFromStation("Casa de Campo")')
 
 def getLongestTripSLow(): #very slow
 	maxTrips = 0
@@ -231,7 +230,7 @@ def getLongestTripFastER():
 	maxTrips = 0
 	candidates = allStationsSimplelist[:]
 	for neighList in connections:
-		if len(neighList) == 2: #and neighList[0] in candidates:
+		if len(neighList) == 2:
 			oldStation = neighList[0][0]
 			notCandidate = neighList[1][0]
 			neighbors = connections[neighList[1][1]][1:]
@@ -268,3 +267,5 @@ cProfile.run('getLongestTripFastER()')
 #major update: "isStationThere" is taking a lot of computing space when it's basically a function to get indexes
 #we're just going to store stations as tuples so they have their index next to themselves, ready to be accessed
 # done! this has increased setup time a bit maybe (<0.001 anyway), but time to get the longest trip is almost halved
+# sub 0.05 now for L7 with the latest optimizations - but I believe it can still be A LOT better
+# also, many functions in the program are probably broken now since I changed connections' structure
