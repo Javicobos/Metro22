@@ -30,7 +30,7 @@ Congosto | Villa de Vallecas | La Gavía
 La Gavía | Congosto | Las Suertes
 Las Suertes | La Gavía | Valdecarros
 Valdecarros | Las Suertes
-Canal | Cuatro Caminos | Quevedo
+Canal | Cuatro Caminos | Quevedo | Islas Filipinas | Alonso Cano
 Quevedo | Canal | San Bernardo
 San Bernardo | Quevedo | Noviciado | Argüelles | Bilbao
 Noviciado | San Bernardo | Santo Domingo
@@ -71,7 +71,7 @@ Serrano | Colón | Velázquez
 Velázquez | Serrano | Goya
 Lista | Goya | Diego de León
 Diego de León | Lista | Avenida de América | Núñez de Balboa | Ventas | Manuel Becerra
-Avenida de América | Diego de León | Prosperidad | República Argentina
+Avenida de América | Diego de León | Prosperidad | República Argentina | Gregorio Marañón | Cartagena
 Prosperidad | Avenida de América | Alfonso XIII
 Alfonso XIII | Prosperidad | Avenida de la Paz
 Avenida de la Paz | Alfonso XIII | Arturo Soria
@@ -102,7 +102,7 @@ Rubén Darío | Alonso Martínez | Núñez de Balboa
 Núñez de Balboa | Rubén Darío | Diego de León
 El Carmen | Ventas | Quintana
 Quintana | El Carmen | Pueblo Nuevo
-Pueblo Nuevo | Quintana | Ciudad Lineal
+Pueblo Nuevo | Quintana | Ciudad Lineal | Barrio de la Concepción | Ascao
 Ciudad Lineal | Pueblo Nuevo | Suanzes
 Suanzes | Ciudad Lineal | Torre Arias
 Torre Arias | Suanzes | Canillejas
@@ -125,6 +125,33 @@ Sainz de Baranda | Conde de Casal | O'Donnell
 O'Donnell | Sainz de Baranda | Manuel Becerra
 República Argentina | Avenida de América | Nuevos Ministerios
 Nuevos Ministerios | República Argentina | Cuatro Caminos
-Guzmán el Bueno | Cuatro Caminos | Vicente Aleixandre
+Guzmán el Bueno | Cuatro Caminos | Vicente Aleixandre | Francos Rodríguez | Islas Filipinas
 Vicente Aleixandre | Guzmán el Bueno | Ciudad Universitaria
 Ciudad Universitaria | Vicente Aleixandre | Moncloa
+Pitis | Arroyofresno
+Arroyofresno | Pitis | Lacoma
+Lacoma | Arroyofresno | Avenida de la Ilustración
+Avenida de la Ilustración | Lacoma | Peñagrande
+Peñagrande | Avenida de la Ilustración | Antonio Machado
+Antonio Machado | Peñagrande | Valdezarza
+Valdezarza | Antonio Machado | Francos Rodríguez
+Francos Rodríguez | Valdezarza | Guzmán el Bueno
+Islas Filipinas | Guzmán el Bueno | Canal
+Alonso Cano | Canal | Gregorio Marañón
+Gregorio Marañón | Alonso Cano | Avenida de América
+Cartagena | Avenida de América | Parque de las Avenidas
+Parque de las Avenidas | Cartagena | Barrio de la Concepción
+Barrio de la Concepción | Parque de las Avenidas | Pueblo Nuevo
+Ascao | Pueblo Nuevo | García Noblejas
+García Noblejas | Ascao | Simancas
+Simancas | García Noblejas | San Blas
+San Blas | Simancas | Las Musas
+Las Musas | San Blas | Estadio Metropolitano
+Estadio Metropolitano | Las Musas | Barrio del Puerto
+Barrio del Puerto | Estadio Metropolitano | Coslada Central
+Coslada Central | Barrio del Puerto | La Rambla
+La Rambla | Coslada Central | San Fernando
+San Fernando | La Rambla | Jarama
+Jarama | San Fernando | Henares
+Henares | Jarama | Hospital del Henares
+Hospital del Henares | Henares

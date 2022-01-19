@@ -42,7 +42,12 @@ L6 = ["Moncloa", "Argüelles", "Príncipe Pío", "Puera del Ángel", "Alto de Ex
 		"Sainz de Baranda",  "O'Donnell", "Manuel Becerra", "Diego de León", "Avenida de América", 
 		"República Argentina", "Nuevos Ministerios", "Cuatro Caminos", "Guzmán el Bueno", 
 		"Vicente Aleixandre", "Ciudad Universitaria", "Moncloa"]
-FullMetro = [L1, L2, L3, L4, L5, L6]
+L7 = ["Pitis", "Arroyofresno", "Lacoma", "Avenida de la Ilustración", "Peñagrande", "Antonio Machado",
+		"Valdezarza", "Francos Rodríguez", "Guzmán el Bueno", "Islas Filipinas", "Canal", "Alonso Cano", 
+		"Gregorio Marañón", "Avenida de América", "Cartagena", "Parque de las Avenidas", "Barrio de la Concepción", 
+		"Pueblo Nuevo", "Ascao", "García Noblejas", "Simancas", "San Blas", "Las Musas", "Estadio Metropolitano", 
+		"Barrio del Puerto", "Coslada Central", "La Rambla", "San Fernando", "Jarama", "Henares", "Hospital del Henares"]
+FullMetro = [L1, L2, L3, L4, L5, L6, L7]
 
 #	An important question now is: how do we know which stations are adjacent to a given one?
 #	Making a list of stations and their neighbors seems reasonable, as we only have to "look" at the map once and then we have the data ready
@@ -76,7 +81,8 @@ def makeConnections():
 
 
 import cProfile
-cProfile.run('makeConnections()')
+#cProfile.run('makeConnections()')
+makeConnections()
 
 outputFile = open('Metro0.txt', 'w') #should we sort connections?
 #connections.sort()
@@ -137,16 +143,16 @@ def connectTwoStationsSecondWay(station1, station2):
 					nextTripLevel.append((neighbor,i))
 					foundStationsSimpleList.append(neighbor)
 					if neighbor == station2:
-						#j = i
-						#toPrint = [neighbor]
-						#print "Puedes ir de " + station1 + ' a ' + station2 + " en " + str(trips + 1) + " viajes pasando por:"
-						#while trips > -1:
-						#	city,j = bread[trips][j]
-						#	trips -= 1
-						#	toPrint.append(city)
-						#toPrint.reverse()
-						#for k,a in enumerate(toPrint):
-						#	print str(k) + ": " + a
+						j = i
+						toPrint = [neighbor]
+						print "Puedes ir de " + station1 + ' a ' + station2 + " en " + str(trips + 1) + " viajes pasando por:"
+						while trips > -1:
+							city,j = bread[trips][j]
+							trips -= 1
+							toPrint.append(city)
+						toPrint.reverse()
+						for k,a in enumerate(toPrint):
+							print str(k) + ": " + a
 						return trips + 1
 		bread.append(nextTripLevel)
 		trips += 1
@@ -154,7 +160,7 @@ def connectTwoStationsSecondWay(station1, station2):
 
 
 
-#cProfile.run('connectTwoStationsSecondWay("Casa de Campo", "Parque de Santa María")')
+#cProfile.run('connectTwoStationsSecondWay("Casa de Campo", "Hospital del Henares")')
 
 def longestFromStation(station):
 	#if isStationThere(station) == -1:
@@ -228,8 +234,8 @@ def getLongestTripFastER():
 		if candidate[1] > maxTrips:
 			maxTrips = candidate[1]
 			winnercities = (c1, candidate[0])
-	print winnercities[0] + ", " + winnercities[1]
-	print maxTrips
+	print "\n\033[0;32mLas estaciones que más lejos están son \033[0;36m" + winnercities[0] + "\033[0;32m y \033[0;36m" + winnercities[1] + "\033[0;32m, a \033[0;33m" + str(maxTrips) + "\033[0;32m paradas\033[0m\n"
+	#print maxTrips
 	#it seems slightly faster than the previous one but I believe it can still be optimized a lot
 
 
