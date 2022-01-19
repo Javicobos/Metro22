@@ -174,35 +174,60 @@ def connectTwoStationsSecondWay(station1, station2):
 		trips += 1
 
 
-
-
 #cProfile.run('connectTwoStationsSecondWay("Casa de Campo", "Hospital del Henares")')
 
 def longestFromStation(station):
 	bread = []
 	trips = 0
+	totalStations = len(allStationsSimplelist)
 	ogIndex = allStationsSimplelist.index(station)
 	bread.append([ogIndex])
-	foundStationsSimpleList = [ogIndex]
+	foundStationsSimpleList = [0 for i in range(totalStations)] #this is very cool!! apparently very fast too
+	foundStationsSimpleList[ogIndex] = 1
 	foundStations = 1
-	totalStations = len(allStationsSimplelist)
 	while True:
-		nextTripLevel = []
+		#nextTripLevel = []
 		#bread.append([])
-		for stationVisited in bread[trips]:
-			for neighbor in connections[stationVisited][1:]:	#neighbor is a (station, i) tuple
-				if neighbor[1] not in foundStationsSimpleList:
-					nextTripLevel.append(neighbor[1])
-					#bread[trips + 1].append(neighbor[1])
-					foundStationsSimpleList.append(neighbor[1])
-					foundStations += 1
-					if foundStations == totalStations:
-						return neighbor[0], trips + 1
+		#for stationVisited in bread[trips]:
+		nextTripLevel = {neighbor[1] for stationVisited in bread[trips] for neighbor in connections[stationVisited][1:] if foundStationsSimpleList[neighbor[1]] == 0} #set comprehension, cool
+		#print nextTripLevel
+		#print nextTripLevel
+		#nextTripLevel2XD = [ele for ele in nextTripLevel if foundStationsSimpleList[ele] == 0]
+		#print nextTripLevel2XD
+		
+		#nextTripLevel = set(nextTripLevel)
+		#nextTripLevel = dict.fromkeys(nextTripLevel).keys()
+		
+		for ele in nextTripLevel:
+			#if foundStationsSimpleList[ele] == 1:
+				#foundStationsSimpleList.pop(ele)
+				#continue
+			#print ele
+			foundStationsSimpleList[ele] = 1
+			#print allStationsSimplelist[ele]
+			#foundStations += 1
+		foundStations += len(nextTripLevel)
+			#print foundStations
+		if foundStations >= totalStations:
+			return allStationsSimplelist[list(nextTripLevel)[-1]], trips + 1
+		#for neighbor in connections[stationVisited][1:]:	#neighbor is a (station, i) tuple
+			#if neighbor[1] not in foundStationsSimpleList:
+			#if foundStationsSimpleList[neighbor[1]] == 0:
+				#nextTripLevel.append(neighbor[1])
+				#bread[trips + 1].append(neighbor[1])
+				#foundStationsSimpleList.append(neighbor[1])
+				#foundStationsSimpleList[neighbor[1]] = 1
+				#foundStations += 1
+				#if foundStations == totalStations:
+				#	return neighbor[0], trips + 1
 		bread.append(nextTripLevel)
+		#print bread
 		trips += 1
 
 
 #cProfile.run('longestFromStation("Casa de Campo")')
+
+print longestFromStation("Casa de Campo")
 
 def getLongestTripSLow(): #very slow
 	maxTrips = 0
@@ -269,3 +294,5 @@ cProfile.run('getLongestTripFastER()')
 # done! this has increased setup time a bit maybe (<0.001 anyway), but time to get the longest trip is almost halved
 # sub 0.05 now for L7 with the latest optimizations - but I believe it can still be A LOT better
 # also, many functions in the program are probably broken now since I changed connections' structure
+
+#LETSGOO the last changes made the function take a quarter of the time it was taking before !?!?
