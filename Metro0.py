@@ -15,9 +15,11 @@
 #	L4 Argüelles - Alonso Martínez (this one will let us have some trips that require using three lines, which is nice to test things)
 #	Update: lines are now long
 
-L1 = ["Pinar de Chamartín", "Bambú", "Chamartín", "Plaza de Castilla", "Valdeacederas", 
- 		"Tetuán", "Estrecho", "Alvarado", "Cuatro Caminos", "Ríos Rosas", "Iglesia", "Bilbao", "Tribunal", 
-		"Gran Vía", "Sol", "Tirso de Molina", "Antón Martín", "Estación del Arte", "Atocha Renfe"]
+L1 = ["Pinar de Chamartín", "Bambú", "Chamartín", "Plaza de Castilla", "Valdeacederas", "Tetuán", "Estrecho",
+		"Alvarado", "Cuatro Caminos", "Ríos Rosas", "Iglesia", "Bilbao", "Tribunal", "Gran Vía", 
+		"Sol", "Tirso de Molina", "Antón Martín", "Estación del Arte", "Atocha Renfe", "Menéndez Pelayo", 
+		"Pacífico", "Puente de Vallecas", "Nueva Numancia", "Portazgo", "Alto del Arenal", "Miguel Hernández", 
+		"Sierra de Guadalupe", "Villa de Vallecas", "Congosto", "La Gavía", "Las Suertes", "Valdecarros"]
 L2 = ["Cuatro Caminos", "Canal", "Quevedo", "San Bernardo", "Noviciado", "Santo Domingo", "Ópera", "Sol",
 		"Sevilla", "Banco de España", "Retiro", "Príncipe de Vergara", "Goya", "Manuel Becerra", "Ventas", 
 		"La Elipa", "La Almudena", "Alsacia", "Avenida de Guadalajara", "Las Rosas"]
@@ -77,6 +79,7 @@ import cProfile
 cProfile.run('makeConnections()')
 
 outputFile = open('Metro0.txt', 'w') #should we sort connections?
+#connections.sort()
 for i in connections: #export LC_CTYPE="es:ES.UTF-8" //that did something but not quite what I wanted
 	for e in i[:-1]:
 		outputFile.write(e + ' | ')
@@ -177,7 +180,7 @@ def longestFromStation(station):
 		trips += 1
 
 
-def getLongestTripSLow(): #1.something seconds
+def getLongestTripSLow(): #very slow
 	maxTrips = 0
 	for i1,c1 in enumerate(connections):
 		for i2, c2 in enumerate(connections[i1 + 1:]):
@@ -188,7 +191,7 @@ def getLongestTripSLow(): #1.something seconds
 	print maxTrips
 	print maxcities[0] + ", " + maxcities[1]
 
-def getLongestTripFast(): #0.063 seconds!
+def getLongestTripFast(): #fine but can be faster, slows down a lot with more stations added
 	maxTrips = 0
 	for c1 in connections:
 		candidate = longestFromStation(c1[0])
@@ -196,11 +199,45 @@ def getLongestTripFast(): #0.063 seconds!
 			maxTrips = candidate[1]
 			winnercities = (c1[0], candidate[0])
 	print winnercities[0] + ", " + winnercities[1]
+	print maxTrips									#this could still be improved a lot if we remember which stations we visited while making a long trip
+													#because some of thsoe won't be candidates for a long trip anymore
+	
+def getLongestTripFastER():
+	maxTrips = 0
+	candidates = []
+	for station in connections:
+		candidates.append(station[0])
+	for neighList in connections:
+		if len(neighList) == 2: #and neighList[0] in candidates:
+			oldStation = neighList[0]
+			notCandidate = neighList[1]
+			neighbors = connections[isStationThere(notCandidate)][1:]
+			while len(neighbors) <= 3:
+				candidates.pop(candidates.index(notCandidate))
+				#print notCandidate
+				for newNei in neighbors:
+					if newNei != oldStation:
+						oldStation = notCandidate
+						notCandidate = newNei
+						neighbors = connections[isStationThere(notCandidate)][1:]
+						break
+	#now with a reduced list of candidates we apply the bread
+	#print candidates
+	for c1 in candidates:
+		candidate = longestFromStation(c1)
+		if candidate[1] > maxTrips:
+			maxTrips = candidate[1]
+			winnercities = (c1, candidate[0])
+	print winnercities[0] + ", " + winnercities[1]
 	print maxTrips
-		
+	#it seems slightly faster than the previous one but I believe it can still be optimized a lot
+
+
 
 #cProfile.run('getLongestTripSlow()')
 
 #print longestFromStation("Casa de Campo")
 
-cProfile.run('getLongestTripFast()')
+#cProfile.run('getLongestTripFast()')
+
+cProfile.run('getLongestTripFastER()')

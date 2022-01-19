@@ -16,7 +16,20 @@ Sol | Gran Vía | Tirso de Molina | Ópera | Sevilla | Callao | Lavapiés
 Tirso de Molina | Sol | Antón Martín
 Antón Martín | Tirso de Molina | Estación del Arte
 Estación del Arte | Antón Martín | Atocha Renfe
-Atocha Renfe | Estación del Arte
+Atocha Renfe | Estación del Arte | Menéndez Pelayo
+Menéndez Pelayo | Atocha Renfe | Pacífico
+Pacífico | Menéndez Pelayo | Puente de Vallecas | Méndez Álvaro | Conde de Casal
+Puente de Vallecas | Pacífico | Nueva Numancia
+Nueva Numancia | Puente de Vallecas | Portazgo
+Portazgo | Nueva Numancia | Alto del Arenal
+Alto del Arenal | Portazgo | Miguel Hernández
+Miguel Hernández | Alto del Arenal | Sierra de Guadalupe
+Sierra de Guadalupe | Miguel Hernández | Villa de Vallecas
+Villa de Vallecas | Sierra de Guadalupe | Congosto
+Congosto | Villa de Vallecas | La Gavía
+La Gavía | Congosto | Las Suertes
+Las Suertes | La Gavía | Valdecarros
+Valdecarros | Las Suertes
 Canal | Cuatro Caminos | Quevedo
 Quevedo | Canal | San Bernardo
 San Bernardo | Quevedo | Noviciado | Argüelles | Bilbao
@@ -107,7 +120,6 @@ Plaza Elíptica | Opañel | Usera
 Usera | Plaza Elíptica | Legazpi
 Arganzuela-Planetario | Legazpi | Méndez Álvaro
 Méndez Álvaro | Arganzuela-Planetario | Pacífico
-Pacífico | Méndez Álvaro | Conde de Casal
 Conde de Casal | Pacífico | Sainz de Baranda
 Sainz de Baranda | Conde de Casal | O'Donnell
 O'Donnell | Sainz de Baranda | Manuel Becerra
