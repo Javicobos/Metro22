@@ -13,13 +13,34 @@
 #	L2 Cuatro Caminos - Sevilla
 #	L3 Moncloa - Lavapiés
 #	L4 Argüelles - Alonso Martínez (this one will let us have some trips that require using three lines, which is nice to test things)
+#	Update: lines are now long
 
-L1 = ["Tetuán", "Estrecho", "Alvarado", "Cuatro Caminos", "Ríos Rosas", "Iglesia", "Bilbao", "Tribunal", 
+L1 = ["Pinar de Chamartín", "Bambú", "Chamartín", "Plaza de Castilla", "Valdeacederas", 
+ 		"Tetuán", "Estrecho", "Alvarado", "Cuatro Caminos", "Ríos Rosas", "Iglesia", "Bilbao", "Tribunal", 
 		"Gran Vía", "Sol", "Tirso de Molina", "Antón Martín", "Estación del Arte", "Atocha Renfe"]
-L2 = ["Cuatro Caminos", "Canal", "Quevedo", "San Bernardo", "Noviciado", "Santo Domingo", "Ópera", "Sol", "Sevilla"]
-L3 = ["Moncloa", "Argüelles", "Ventura Rodríguez", "Plaza de España", "Callao", "Sol", "Lavapiés"]
-L4 = ["Argüelles", "San Bernardo", "Bilbao", "Alonso Martínez"]
-FullMetro = [L1, L2, L3, L4]
+L2 = ["Cuatro Caminos", "Canal", "Quevedo", "San Bernardo", "Noviciado", "Santo Domingo", "Ópera", "Sol",
+		"Sevilla", "Banco de España", "Retiro", "Príncipe de Vergara", "Goya", "Manuel Becerra", "Ventas", 
+		"La Elipa", "La Almudena", "Alsacia", "Avenida de Guadalajara", "Las Rosas"]
+L3 = ["Moncloa", "Argüelles", "Ventura Rodríguez", "Plaza de España", "Callao", "Sol", "Lavapiés",
+		"Embajadores", "Palos de la Frontera", "Delicias", "Legazpi", "Almendrales", 
+		"Hospital 12 de Octubre", "San Fermín", "Ciudad de los Ángeles", 
+		"Cruce de Villaverde", "San Cristóbal", "Villaverde Alto"]
+L4 = ["Argüelles", "San Bernardo", "Bilbao", "Alonso Martínez", "Colón", "Serrano", "Velázquez", "Goya", 
+		"Lista", "Diego de León", "Avenida de América", "Prosperidad", "Alfonso XIII", "Avenida de la Paz", 
+		"Arturo Soria", "Esperanza", "Canillas", "Mar de Cristal", "San Lorenzo", "Parque de Santa María", 
+		"Hortaleza", "Manoteras", "Pinar de Chamartín"]
+L5 = ["Casa de Campo", "Campamento", "Empalme", "Aluche", "Eugenia de Montijo", "Carabanchel", "Vista Alegre", 
+		"Oporto", "Urgel", "Marqués de Vadillo", "Pirámides", "Acacias", "Puerta de Toledo", "La Latina", 
+		"Ópera", "Callao", "Gran Vía", "Chueca", "Alonso Martínez", "Rubén Darío", "Núñez de Balboa", 
+		"Diego de León", "Ventas", "El Carmen", "Quintana", "Pueblo Nuevo", "Ciudad Lineal", "Suanzes", 
+		"Torre Arias", "Canillejas", "El Capricho", "Alameda de Osuna"]
+L6 = ["Moncloa", "Argüelles", "Príncipe Pío", "Puera del Ángel", "Alto de Extremadura", "Lucero", 
+		"Laguna", "Carpetana", "Oporto", "Opañel", "Plaza Elíptica", "Usera", 
+		"Legazpi", "Arganzuela-Planetario", "Méndez Álvaro", "Pacífico", "Conde de Casal", 
+		"Sainz de Baranda",  "O'Donnell", "Manuel Becerra", "Diego de León", "Avenida de América", 
+		"República Argentina", "Nuevos Ministerios", "Cuatro Caminos", "Guzmán el Bueno", 
+		"Vicente Aleixandre", "Ciudad Universitaria", "Moncloa"]
+FullMetro = [L1, L2, L3, L4, L5, L6]
 
 #	An important question now is: how do we know which stations are adjacent to a given one?
 #	Making a list of stations and their neighbors seems reasonable, as we only have to "look" at the map once and then we have the data ready
@@ -42,10 +63,10 @@ def makeConnections():
 			stationIndex = isStationThere(station)
 			if stationIndex == -1:
 				connections.append([station])
-			if e > 0:
+			if e > 0  and line[e-1] not in connections[stationIndex]:
 				connections[stationIndex].append(line[e-1])
-			if e < lastStationIndex:
-				connections[stationIndex].append(line[e+1]) #not handling repeats (lie l1 and l10 doing chamartín - plaza de castilla) atm, may not be worth it
+			if e < lastStationIndex and line[e+1] not in connections[stationIndex]:
+				connections[stationIndex].append(line[e+1])
 				
 
 			
@@ -55,7 +76,7 @@ def makeConnections():
 import cProfile
 cProfile.run('makeConnections()')
 
-outputFile = open('Metro0.txt', 'w')
+outputFile = open('Metro0.txt', 'w') #should we sort connections?
 for i in connections: #export LC_CTYPE="es:ES.UTF-8" //that did something but not quite what I wanted
 	for e in i[:-1]:
 		outputFile.write(e + ' | ')
@@ -95,6 +116,9 @@ def connectTwoStations(station1, station2): #for now this will be gigaslow but l
 		trips += 1
 
 def connectTwoStationsSecondWay(station1, station2):
+	if isStationThere(station1) == -1 or isStationThere(station2) == -1:
+		print "No conozco esa estación!"
+		return False
 	bread = []
 	trips = 0
 	bread.append([(station1,0)])
@@ -124,4 +148,4 @@ def connectTwoStationsSecondWay(station1, station2):
 
 
 
-cProfile.run('connectTwoStationsSecondWay("Moncloa", "Tetuán")')
+cProfile.run('connectTwoStationsSecondWay("Casa de Campo", "Parque de Santa María")')

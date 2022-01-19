@@ -1,12 +1,17 @@
-Tetuán | Estrecho
+Pinar de Chamartín | Bambú | Manoteras
+Bambú | Pinar de Chamartín | Chamartín
+Chamartín | Bambú | Plaza de Castilla
+Plaza de Castilla | Chamartín | Valdeacederas
+Valdeacederas | Plaza de Castilla | Tetuán
+Tetuán | Valdeacederas | Estrecho
 Estrecho | Tetuán | Alvarado
 Alvarado | Estrecho | Cuatro Caminos
-Cuatro Caminos | Alvarado | Ríos Rosas | Canal
+Cuatro Caminos | Alvarado | Ríos Rosas | Canal | Nuevos Ministerios | Guzmán el Bueno
 Ríos Rosas | Cuatro Caminos | Iglesia
 Iglesia | Ríos Rosas | Bilbao
 Bilbao | Iglesia | Tribunal | San Bernardo | Alonso Martínez
 Tribunal | Bilbao | Gran Vía
-Gran Vía | Tribunal | Sol
+Gran Vía | Tribunal | Sol | Callao | Chueca
 Sol | Gran Vía | Tirso de Molina | Ópera | Sevilla | Callao | Lavapiés
 Tirso de Molina | Sol | Antón Martín
 Antón Martín | Tirso de Molina | Estación del Arte
@@ -17,12 +22,97 @@ Quevedo | Canal | San Bernardo
 San Bernardo | Quevedo | Noviciado | Argüelles | Bilbao
 Noviciado | San Bernardo | Santo Domingo
 Santo Domingo | Noviciado | Ópera
-Ópera | Santo Domingo | Sol
-Sevilla | Sol
-Moncloa | Argüelles
-Argüelles | Moncloa | Ventura Rodríguez | San Bernardo
+Ópera | Santo Domingo | Sol | La Latina | Callao
+Sevilla | Sol | Banco de España
+Banco de España | Sevilla | Retiro
+Retiro | Banco de España | Príncipe de Vergara
+Príncipe de Vergara | Retiro | Goya
+Goya | Príncipe de Vergara | Manuel Becerra | Velázquez | Lista
+Manuel Becerra | Goya | Ventas | O'Donnell | Diego de León
+Ventas | Manuel Becerra | La Elipa | Diego de León | El Carmen
+La Elipa | Ventas | La Almudena
+La Almudena | La Elipa | Alsacia
+Alsacia | La Almudena | Avenida de Guadalajara
+Avenida de Guadalajara | Alsacia | Las Rosas
+Las Rosas | Avenida de Guadalajara
+Moncloa | Argüelles | Ciudad Universitaria
+Argüelles | Moncloa | Ventura Rodríguez | San Bernardo | Príncipe Pío
 Ventura Rodríguez | Argüelles | Plaza de España
 Plaza de España | Ventura Rodríguez | Callao
-Callao | Plaza de España | Sol
-Lavapiés | Sol
-Alonso Martínez | Bilbao
+Callao | Plaza de España | Sol | Ópera | Gran Vía
+Lavapiés | Sol | Embajadores
+Embajadores | Lavapiés | Palos de la Frontera
+Palos de la Frontera | Embajadores | Delicias
+Delicias | Palos de la Frontera | Legazpi
+Legazpi | Delicias | Almendrales | Usera | Arganzuela-Planetario
+Almendrales | Legazpi | Hospital 12 de Octubre
+Hospital 12 de Octubre | Almendrales | San Fermín
+San Fermín | Hospital 12 de Octubre | Ciudad de los Ángeles
+Ciudad de los Ángeles | San Fermín | Cruce de Villaverde
+Cruce de Villaverde | Ciudad de los Ángeles | San Cristóbal
+San Cristóbal | Cruce de Villaverde | Villaverde Alto
+Villaverde Alto | San Cristóbal
+Alonso Martínez | Bilbao | Colón | Chueca | Rubén Darío
+Colón | Alonso Martínez | Serrano
+Serrano | Colón | Velázquez
+Velázquez | Serrano | Goya
+Lista | Goya | Diego de León
+Diego de León | Lista | Avenida de América | Núñez de Balboa | Ventas | Manuel Becerra
+Avenida de América | Diego de León | Prosperidad | República Argentina
+Prosperidad | Avenida de América | Alfonso XIII
+Alfonso XIII | Prosperidad | Avenida de la Paz
+Avenida de la Paz | Alfonso XIII | Arturo Soria
+Arturo Soria | Avenida de la Paz | Esperanza
+Esperanza | Arturo Soria | Canillas
+Canillas | Esperanza | Mar de Cristal
+Mar de Cristal | Canillas | San Lorenzo
+San Lorenzo | Mar de Cristal | Parque de Santa María
+Parque de Santa María | San Lorenzo | Hortaleza
+Hortaleza | Parque de Santa María | Manoteras
+Manoteras | Hortaleza | Pinar de Chamartín
+Casa de Campo | Campamento
+Campamento | Casa de Campo | Empalme
+Empalme | Campamento | Aluche
+Aluche | Empalme | Eugenia de Montijo
+Eugenia de Montijo | Aluche | Carabanchel
+Carabanchel | Eugenia de Montijo | Vista Alegre
+Vista Alegre | Carabanchel | Oporto
+Oporto | Vista Alegre | Urgel | Carpetana | Opañel
+Urgel | Oporto | Marqués de Vadillo
+Marqués de Vadillo | Urgel | Pirámides
+Pirámides | Marqués de Vadillo | Acacias
+Acacias | Pirámides | Puerta de Toledo
+Puerta de Toledo | Acacias | La Latina
+La Latina | Puerta de Toledo | Ópera
+Chueca | Gran Vía | Alonso Martínez
+Rubén Darío | Alonso Martínez | Núñez de Balboa
+Núñez de Balboa | Rubén Darío | Diego de León
+El Carmen | Ventas | Quintana
+Quintana | El Carmen | Pueblo Nuevo
+Pueblo Nuevo | Quintana | Ciudad Lineal
+Ciudad Lineal | Pueblo Nuevo | Suanzes
+Suanzes | Ciudad Lineal | Torre Arias
+Torre Arias | Suanzes | Canillejas
+Canillejas | Torre Arias | El Capricho
+El Capricho | Canillejas | Alameda de Osuna
+Alameda de Osuna | El Capricho
+Príncipe Pío | Argüelles | Puera del Ángel
+Puera del Ángel | Príncipe Pío | Alto de Extremadura
+Alto de Extremadura | Puera del Ángel | Lucero
+Lucero | Alto de Extremadura | Laguna
+Laguna | Lucero | Carpetana
+Carpetana | Laguna | Oporto
+Opañel | Oporto | Plaza Elíptica
+Plaza Elíptica | Opañel | Usera
+Usera | Plaza Elíptica | Legazpi
+Arganzuela-Planetario | Legazpi | Méndez Álvaro
+Méndez Álvaro | Arganzuela-Planetario | Pacífico
+Pacífico | Méndez Álvaro | Conde de Casal
+Conde de Casal | Pacífico | Sainz de Baranda
+Sainz de Baranda | Conde de Casal | O'Donnell
+O'Donnell | Sainz de Baranda | Manuel Becerra
+República Argentina | Avenida de América | Nuevos Ministerios
+Nuevos Ministerios | República Argentina | Cuatro Caminos
+Guzmán el Bueno | Cuatro Caminos | Vicente Aleixandre
+Vicente Aleixandre | Guzmán el Bueno | Ciudad Universitaria
+Ciudad Universitaria | Vicente Aleixandre | Moncloa
