@@ -119,6 +119,9 @@ def connectTwoStationsSecondWay(station1, station2):
 	if isStationThere(station1) == -1 or isStationThere(station2) == -1:
 		print "No conozco esa estación!"
 		return False
+	if station1 == station2:
+		print "Un viaje rapitido"
+		return 0
 	bread = []
 	trips = 0
 	bread.append([(station1,0)])
@@ -131,21 +134,73 @@ def connectTwoStationsSecondWay(station1, station2):
 					nextTripLevel.append((neighbor,i))
 					foundStationsSimpleList.append(neighbor)
 					if neighbor == station2:
-						j = i
-						toPrint = [neighbor]
-						print "Puedes ir de " + station1 + ' a ' + station2 + " en " + str(trips + 1) + " viajes pasando por:"
-						while trips > -1:
-							city,j = bread[trips][j]
-							trips -= 1
-							toPrint.append(city)
-						toPrint.reverse()
-						for k,a in enumerate(toPrint):
-							print str(k) + ": " + a
-						return True
+						#j = i
+						#toPrint = [neighbor]
+						#print "Puedes ir de " + station1 + ' a ' + station2 + " en " + str(trips + 1) + " viajes pasando por:"
+						#while trips > -1:
+						#	city,j = bread[trips][j]
+						#	trips -= 1
+						#	toPrint.append(city)
+						#toPrint.reverse()
+						#for k,a in enumerate(toPrint):
+						#	print str(k) + ": " + a
+						return trips + 1
 		bread.append(nextTripLevel)
 		trips += 1
 
 
 
 
-cProfile.run('connectTwoStationsSecondWay("Casa de Campo", "Parque de Santa María")')
+#cProfile.run('connectTwoStationsSecondWay("Casa de Campo", "Parque de Santa María")')
+
+def longestFromStation(station):
+	#if isStationThere(station) == -1:
+	#	print "No conozco esa estación!"
+	#	return False
+	bread = []
+	trips = 0
+	bread.append([station])
+	foundStationsSimpleList = [station]
+	foundStations = 1
+	totalStations = len(connections)
+	while True:
+		nextTripLevel = []
+		for stationVisited in bread[trips]:
+			for neighbor in connections[isStationThere(stationVisited)][1:]:
+				if neighbor not in foundStationsSimpleList:
+					nextTripLevel.append((neighbor))
+					foundStationsSimpleList.append(neighbor)
+					foundStations += 1
+					if foundStations == totalStations:
+						return neighbor, trips +1
+		bread.append(nextTripLevel)
+		trips += 1
+
+
+def getLongestTripSLow(): #1.something seconds
+	maxTrips = 0
+	for i1,c1 in enumerate(connections):
+		for i2, c2 in enumerate(connections[i1 + 1:]):
+			currentTrips = connectTwoStationsSecondWay(c1[0], c2[0])
+			if maxTrips < currentTrips:
+				maxTrips = currentTrips
+				maxcities = (c1[0], c2[0])
+	print maxTrips
+	print maxcities[0] + ", " + maxcities[1]
+
+def getLongestTripFast(): #0.063 seconds!
+	maxTrips = 0
+	for c1 in connections:
+		candidate = longestFromStation(c1[0])
+		if candidate[1] > maxTrips:
+			maxTrips = candidate[1]
+			winnercities = (c1[0], candidate[0])
+	print winnercities[0] + ", " + winnercities[1]
+	print maxTrips
+		
+
+#cProfile.run('getLongestTripSlow()')
+
+#print longestFromStation("Casa de Campo")
+
+cProfile.run('getLongestTripFast()')
