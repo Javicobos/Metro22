@@ -325,9 +325,13 @@ def getCentralStation(): #raw, unoptimized for now
 	for c1 in allStationsSimplelist:
 		candidate = longestFromStation(c1)
 		if candidate[1] <= minTrips:
-			#print c1 + str(candidate)
 			minTrips = candidate[1]
 			winnercities = (c1, candidate[0])
 	print "\n\033[0;32mLa estación mejor comunicada es \033[0;36m" + winnercities[0] + "\033[0;32m y la que tiene más lejos es \033[0;36m" + winnercities[1] + "\033[0;32m, a \033[0;33m" + str(minTrips) + "\033[0;32m paradas\033[0m\n"
 
 cProfile.run('getCentralStation()')
+
+#https://en.wikipedia.org/wiki/Graph_traversal
+#https://en.wikipedia.org/wiki/Travelling_salesman_problem looks like this is indeed very hard
+#https://www.maths.ed.ac.uk/~v1ranick/papers/wilsongraph.pdf maybe useful
+#http://www.cs.columbia.edu/~bauer/cs3134-f15/slides/w3134-1-lecture17.pdf 
