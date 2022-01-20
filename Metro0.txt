@@ -1,7 +1,7 @@
 Pinar de Chamartín | Bambú | Manoteras
 Bambú | Pinar de Chamartín | Chamartín
-Chamartín | Bambú | Plaza de Castilla
-Plaza de Castilla | Chamartín | Valdeacederas
+Chamartín | Bambú | Plaza de Castilla | Begoña
+Plaza de Castilla | Chamartín | Valdeacederas | Ventilla | Duque de Pastrana | Cuzco
 Valdeacederas | Plaza de Castilla | Tetuán
 Tetuán | Valdeacederas | Estrecho
 Estrecho | Tetuán | Alvarado
@@ -10,7 +10,7 @@ Cuatro Caminos | Alvarado | Ríos Rosas | Canal | Nuevos Ministerios | Guzmán e
 Ríos Rosas | Cuatro Caminos | Iglesia
 Iglesia | Ríos Rosas | Bilbao
 Bilbao | Iglesia | Tribunal | San Bernardo | Alonso Martínez
-Tribunal | Bilbao | Gran Vía
+Tribunal | Bilbao | Gran Vía | Alonso Martínez | Plaza de España
 Gran Vía | Tribunal | Sol | Callao | Chueca
 Sol | Gran Vía | Tirso de Molina | Ópera | Sevilla | Callao | Lavapiés
 Tirso de Molina | Sol | Antón Martín
@@ -35,11 +35,11 @@ Quevedo | Canal | San Bernardo
 San Bernardo | Quevedo | Noviciado | Argüelles | Bilbao
 Noviciado | San Bernardo | Santo Domingo
 Santo Domingo | Noviciado | Ópera
-Ópera | Santo Domingo | Sol | La Latina | Callao
+Ópera | Santo Domingo | Sol | La Latina | Callao | Príncipe Pío
 Sevilla | Sol | Banco de España
 Banco de España | Sevilla | Retiro
 Retiro | Banco de España | Príncipe de Vergara
-Príncipe de Vergara | Retiro | Goya
+Príncipe de Vergara | Retiro | Goya | Núñez de Balboa | Ibiza
 Goya | Príncipe de Vergara | Manuel Becerra | Velázquez | Lista
 Manuel Becerra | Goya | Ventas | O'Donnell | Diego de León
 Ventas | Manuel Becerra | La Elipa | Diego de León | El Carmen
@@ -51,7 +51,7 @@ Las Rosas | Avenida de Guadalajara
 Moncloa | Argüelles | Ciudad Universitaria
 Argüelles | Moncloa | Ventura Rodríguez | San Bernardo | Príncipe Pío
 Ventura Rodríguez | Argüelles | Plaza de España
-Plaza de España | Ventura Rodríguez | Callao
+Plaza de España | Ventura Rodríguez | Callao | Tribunal | Príncipe Pío
 Callao | Plaza de España | Sol | Ópera | Gran Vía
 Lavapiés | Sol | Embajadores
 Embajadores | Lavapiés | Palos de la Frontera
@@ -65,25 +65,25 @@ Ciudad de los Ángeles | San Fermín | Cruce de Villaverde
 Cruce de Villaverde | Ciudad de los Ángeles | San Cristóbal
 San Cristóbal | Cruce de Villaverde | Villaverde Alto
 Villaverde Alto | San Cristóbal
-Alonso Martínez | Bilbao | Colón | Chueca | Rubén Darío
+Alonso Martínez | Bilbao | Colón | Chueca | Rubén Darío | Gregorio Marañón | Tribunal
 Colón | Alonso Martínez | Serrano
 Serrano | Colón | Velázquez
 Velázquez | Serrano | Goya
 Lista | Goya | Diego de León
 Diego de León | Lista | Avenida de América | Núñez de Balboa | Ventas | Manuel Becerra
-Avenida de América | Diego de León | Prosperidad | República Argentina | Gregorio Marañón | Cartagena
+Avenida de América | Diego de León | Prosperidad | República Argentina | Gregorio Marañón | Cartagena | Cruz del Rayo | Núñez de Balboa
 Prosperidad | Avenida de América | Alfonso XIII
 Alfonso XIII | Prosperidad | Avenida de la Paz
 Avenida de la Paz | Alfonso XIII | Arturo Soria
 Arturo Soria | Avenida de la Paz | Esperanza
 Esperanza | Arturo Soria | Canillas
 Canillas | Esperanza | Mar de Cristal
-Mar de Cristal | Canillas | San Lorenzo
+Mar de Cristal | Canillas | San Lorenzo | Pinar del Rey | Feria de Madrid
 San Lorenzo | Mar de Cristal | Parque de Santa María
 Parque de Santa María | San Lorenzo | Hortaleza
 Hortaleza | Parque de Santa María | Manoteras
 Manoteras | Hortaleza | Pinar de Chamartín
-Casa de Campo | Campamento
+Casa de Campo | Campamento | Batán | Colonia Jardín
 Campamento | Casa de Campo | Empalme
 Empalme | Campamento | Aluche
 Aluche | Empalme | Eugenia de Montijo
@@ -99,7 +99,7 @@ Puerta de Toledo | Acacias | La Latina
 La Latina | Puerta de Toledo | Ópera
 Chueca | Gran Vía | Alonso Martínez
 Rubén Darío | Alonso Martínez | Núñez de Balboa
-Núñez de Balboa | Rubén Darío | Diego de León
+Núñez de Balboa | Rubén Darío | Diego de León | Avenida de América | Príncipe de Vergara
 El Carmen | Ventas | Quintana
 Quintana | El Carmen | Pueblo Nuevo
 Pueblo Nuevo | Quintana | Ciudad Lineal | Barrio de la Concepción | Ascao
@@ -109,22 +109,22 @@ Torre Arias | Suanzes | Canillejas
 Canillejas | Torre Arias | El Capricho
 El Capricho | Canillejas | Alameda de Osuna
 Alameda de Osuna | El Capricho
-Príncipe Pío | Argüelles | Puera del Ángel
+Príncipe Pío | Argüelles | Puera del Ángel | Plaza de España | Lago | Ópera
 Puera del Ángel | Príncipe Pío | Alto de Extremadura
 Alto de Extremadura | Puera del Ángel | Lucero
 Lucero | Alto de Extremadura | Laguna
 Laguna | Lucero | Carpetana
 Carpetana | Laguna | Oporto
 Opañel | Oporto | Plaza Elíptica
-Plaza Elíptica | Opañel | Usera
+Plaza Elíptica | Opañel | Usera | Abrantes
 Usera | Plaza Elíptica | Legazpi
 Arganzuela-Planetario | Legazpi | Méndez Álvaro
 Méndez Álvaro | Arganzuela-Planetario | Pacífico
 Conde de Casal | Pacífico | Sainz de Baranda
-Sainz de Baranda | Conde de Casal | O'Donnell
+Sainz de Baranda | Conde de Casal | O'Donnell | Ibiza | Estrella
 O'Donnell | Sainz de Baranda | Manuel Becerra
 República Argentina | Avenida de América | Nuevos Ministerios
-Nuevos Ministerios | República Argentina | Cuatro Caminos
+Nuevos Ministerios | República Argentina | Cuatro Caminos | Colombia | Santiago Bernabéu | Gregorio Marañón
 Guzmán el Bueno | Cuatro Caminos | Vicente Aleixandre | Francos Rodríguez | Islas Filipinas
 Vicente Aleixandre | Guzmán el Bueno | Ciudad Universitaria
 Ciudad Universitaria | Vicente Aleixandre | Moncloa
@@ -138,7 +138,7 @@ Valdezarza | Antonio Machado | Francos Rodríguez
 Francos Rodríguez | Valdezarza | Guzmán el Bueno
 Islas Filipinas | Guzmán el Bueno | Canal
 Alonso Cano | Canal | Gregorio Marañón
-Gregorio Marañón | Alonso Cano | Avenida de América
+Gregorio Marañón | Alonso Cano | Avenida de América | Nuevos Ministerios | Alonso Martínez
 Cartagena | Avenida de América | Parque de las Avenidas
 Parque de las Avenidas | Cartagena | Barrio de la Concepción
 Barrio de la Concepción | Parque de las Avenidas | Pueblo Nuevo
@@ -155,3 +155,87 @@ San Fernando | La Rambla | Jarama
 Jarama | San Fernando | Henares
 Henares | Jarama | Hospital del Henares
 Hospital del Henares | Henares
+Colombia | Nuevos Ministerios | Pinar del Rey | Pío XII | Concha Espina
+Pinar del Rey | Colombia | Mar de Cristal
+Feria de Madrid | Mar de Cristal | Aeropuerto T1-T2-T3
+Aeropuerto T1-T2-T3 | Feria de Madrid | Barajas
+Barajas | Aeropuerto T1-T2-T3 | Aeropuerto T-4
+Aeropuerto T-4 | Barajas
+Paco de Lucía | Mirasierra
+Mirasierra | Paco de Lucía | Herrera Oria
+Herrera Oria | Mirasierra | Barrio del Pilar
+Barrio del Pilar | Herrera Oria | Ventilla
+Ventilla | Barrio del Pilar | Plaza de Castilla
+Duque de Pastrana | Plaza de Castilla | Pío XII
+Pío XII | Duque de Pastrana | Colombia
+Concha Espina | Colombia | Cruz del Rayo
+Cruz del Rayo | Concha Espina | Avenida de América
+Ibiza | Príncipe de Vergara | Sainz de Baranda
+Estrella | Sainz de Baranda | Vinateros
+Vinateros | Estrella | Artilleros
+Artilleros | Vinateros | Pavones
+Pavones | Artilleros | Valdebernardo
+Valdebernardo | Pavones | Vicálvaro
+Vicálvaro | Valdebernardo | San Cipriano
+San Cipriano | Vicálvaro | Puerta de Arganda
+Puerta de Arganda | San Cipriano | Rivas Urbanizaciones
+Rivas Urbanizaciones | Puerta de Arganda | Rivas Futura
+Rivas Futura | Rivas Urbanizaciones | Rivas Vaciamadrid
+Rivas Vaciamadrid | Rivas Futura | La Poveda
+La Poveda | Rivas Vaciamadrid | Arganda del Rey
+Arganda del Rey | La Poveda
+Hospital Infanta Sofía | Reyes Católicos
+Reyes Católicos | Hospital Infanta Sofía | Baunatal
+Baunatal | Reyes Católicos | Manuel de Falla
+Manuel de Falla | Baunatal | Marqués de la Valdavia
+Marqués de la Valdavia | Manuel de Falla | La Moraleja
+La Moraleja | Marqués de la Valdavia | La Granja
+La Granja | La Moraleja | Ronda de la Comunicación
+Ronda de la Comunicación | La Granja | Las Tablas
+Las Tablas | Ronda de la Comunicación | Montecarmelo
+Montecarmelo | Las Tablas | Tres Olivos
+Tres Olivos | Montecarmelo | Fuencarral
+Fuencarral | Tres Olivos | Begoña
+Begoña | Fuencarral | Chamartín
+Cuzco | Plaza de Castilla | Santiago Bernabéu
+Santiago Bernabéu | Cuzco | Nuevos Ministerios
+Lago | Príncipe Pío | Batán
+Batán | Lago | Casa de Campo
+Colonia Jardín | Casa de Campo | Aviación Española
+Aviación Española | Colonia Jardín | Cuatro Vientos
+Cuatro Vientos | Aviación Española | Joaquín Vilumbrales
+Joaquín Vilumbrales | Cuatro Vientos | Puerta del Sur
+Puerta del Sur | Joaquín Vilumbrales | Parque de Lisboa | San Nicasio
+Abrantes | Plaza Elíptica | Pan Bendito
+Pan Bendito | Abrantes | San Francisco
+San Francisco | Pan Bendito | Carabanchel Alto
+Carabanchel Alto | San Francisco | La Peseta
+La Peseta | Carabanchel Alto | La Fortuna
+La Fortuna | La Peseta
+Parque de Lisboa | Puerta del Sur | Alcorcón Central
+Alcorcón Central | Parque de Lisboa | Parque Oeste
+Parque Oeste | Alcorcón Central | Universidad Rey Juan Carlos
+Universidad Rey Juan Carlos | Parque Oeste | Móstoles Central
+Móstoles Central | Universidad Rey Juan Carlos | Pradillo
+Pradillo | Móstoles Central | Hospital del Móstoles
+Hospital del Móstoles | Pradillo | Manuela Malasaña
+Manuela Malasaña | Hospital del Móstoles | Loranca
+Loranca | Manuela Malasaña | Hopsital de Fuenlabrada
+Hopsital de Fuenlabrada | Loranca | Parque Europa
+Parque Europa | Hopsital de Fuenlabrada | Fuenlabrada Central
+Fuenlabrada Central | Parque Europa | Parque de los Estado
+Parque de los Estado | Fuenlabrada Central | Arroyo Culebro
+Arroyo Culebro | Parque de los Estado | Conservatorio
+Conservatorio | Arroyo Culebro | Alonso de Mendoza
+Alonso de Mendoza | Conservatorio | Getafe Central
+Getafe Central | Alonso de Mendoza | Juan de la Cierva
+Juan de la Cierva | Getafe Central | El Casar
+El Casar | Juan de la Cierva | Los Espartales
+Los Espartales | El Casar | El Bercial
+El Bercial | Los Espartales | El Carrascal
+El Carrascal | El Bercial | Julián Besteiro
+Julián Besteiro | El Carrascal | Casa del Reloj
+Casa del Reloj | Julián Besteiro | Hospital Severo Ochoa
+Hospital Severo Ochoa | Casa del Reloj | Leganés Central
+Leganés Central | Hospital Severo Ochoa | San Nicasio
+San Nicasio | Leganés Central | Puerta del Sur

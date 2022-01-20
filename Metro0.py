@@ -47,7 +47,26 @@ L7 = ["Pitis", "Arroyofresno", "Lacoma", "Avenida de la Ilustración", "Peñagra
 		"Gregorio Marañón", "Avenida de América", "Cartagena", "Parque de las Avenidas", "Barrio de la Concepción", 
 		"Pueblo Nuevo", "Ascao", "García Noblejas", "Simancas", "San Blas", "Las Musas", "Estadio Metropolitano", 
 		"Barrio del Puerto", "Coslada Central", "La Rambla", "San Fernando", "Jarama", "Henares", "Hospital del Henares"]
-FullMetro = [L1, L2, L3, L4, L5, L6, L7]
+L8 = ["Nuevos Ministerios", "Colombia", "Pinar del Rey", "Mar de Cristal", "Feria de Madrid", "Aeropuerto T1-T2-T3", 
+		"Barajas", "Aeropuerto T-4"]
+L9 = ["Paco de Lucía", "Mirasierra", "Herrera Oria", "Barrio del Pilar", "Ventilla", "Plaza de Castilla", 
+		"Duque de Pastrana", "Pío XII", "Colombia", "Concha Espina", "Cruz del Rayo", "Avenida de América", 
+		"Núñez de Balboa", "Príncipe de Vergara", "Ibiza", "Sainz de Baranda", "Estrella", "Vinateros", 
+		"Artilleros", "Pavones", "Valdebernardo", "Vicálvaro", "San Cipriano", "Puerta de Arganda", 
+		"Rivas Urbanizaciones", "Rivas Futura", "Rivas Vaciamadrid", "La Poveda", "Arganda del Rey"]
+L10 = ["Hospital Infanta Sofía", "Reyes Católicos", "Baunatal", "Manuel de Falla", "Marqués de la Valdavia", 
+		"La Moraleja", "La Granja", "Ronda de la Comunicación", "Las Tablas", "Montecarmelo", "Tres Olivos", 
+		"Fuencarral", "Begoña", "Chamartín", "Plaza de Castilla", "Cuzco", "Santiago Bernabéu", "Nuevos Ministerios", 
+		"Gregorio Marañón", "Alonso Martínez", "Tribunal", "Plaza de España", "Príncipe Pío", "Lago", "Batán", 
+		"Casa de Campo", "Colonia Jardín", "Aviación Española", "Cuatro Vientos", "Joaquín Vilumbrales", "Puerta del Sur"]
+L11 = ["Plaza Elíptica", "Abrantes", "Pan Bendito", "San Francisco", "Carabanchel Alto", "La Peseta", "La Fortuna"]
+L12 = ["Puerta del Sur" ,"Parque de Lisboa", "Alcorcón Central", "Parque Oeste", "Universidad Rey Juan Carlos", 
+		"Móstoles Central", "Pradillo", "Hospital del Móstoles", "Manuela Malasaña", "Loranca", "Hopsital de Fuenlabrada",
+		"Parque Europa", "Fuenlabrada Central", "Parque de los Estado", "Arroyo Culebro", "Conservatorio", "Alonso de Mendoza", 
+		"Getafe Central", "Juan de la Cierva", "El Casar", "Los Espartales", "El Bercial", "El Carrascal", "Julián Besteiro", 
+		"Casa del Reloj", "Hospital Severo Ochoa", "Leganés Central", "San Nicasio", "Puerta del Sur"]
+R = ["Ópera", "Príncipe Pío"]
+FullMetro = [L1, L2, L3, L4, L5, L6, L7, L8, L9, L10, L11, L12, R]
 
 #	An important question now is: how do we know which stations are adjacent to a given one?
 #	Making a list of stations and their neighbors seems reasonable, as we only have to "look" at the map once and then we have the data ready
@@ -189,7 +208,9 @@ def longestFromStation(station):
 		#nextTripLevel = []
 		#bread.append([])
 		#for stationVisited in bread[trips]:
-		nextTripLevel = {neighbor[1] for stationVisited in bread[trips] for neighbor in connections[stationVisited][1:] if foundStationsSimpleList[neighbor[1]] == 0} #set comprehension, cool
+		nextTripLevel = {neighbor[1] for stationVisited in bread[trips] 
+			for neighbor in connections[stationVisited][1:] 
+				if foundStationsSimpleList[neighbor[1]] == 0} #set comprehension, cool
 		#print nextTripLevel
 		#print nextTripLevel
 		#nextTripLevel2XD = [ele for ele in nextTripLevel if foundStationsSimpleList[ele] == 0]
