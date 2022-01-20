@@ -248,7 +248,7 @@ def longestFromStation(station):
 
 #cProfile.run('longestFromStation("Casa de Campo")')
 
-print longestFromStation("Casa de Campo")
+#print longestFromStation("Casa de Campo")
 
 def getLongestTripSLow(): #very slow
 	maxTrips = 0
@@ -308,7 +308,7 @@ def getLongestTripFastER():
 
 #cProfile.run('getLongestTripFast()')
 
-cProfile.run('getLongestTripFastER()')
+#cProfile.run('getLongestTripFastER()')
 
 #major update: "isStationThere" is taking a lot of computing space when it's basically a function to get indexes
 #we're just going to store stations as tuples so they have their index next to themselves, ready to be accessed
@@ -317,3 +317,17 @@ cProfile.run('getLongestTripFastER()')
 # also, many functions in the program are probably broken now since I changed connections' structure
 
 #LETSGOO the last changes made the function take a quarter of the time it was taking before !?!?
+
+#Let's make a function to know which station is the "best" one, the most connected one
+
+def getCentralStation(): #raw, unoptimized for now
+	minTrips = 500
+	for c1 in allStationsSimplelist:
+		candidate = longestFromStation(c1)
+		if candidate[1] <= minTrips:
+			#print c1 + str(candidate)
+			minTrips = candidate[1]
+			winnercities = (c1, candidate[0])
+	print "\n\033[0;32mLa estación mejor comunicada es \033[0;36m" + winnercities[0] + "\033[0;32m y la que tiene más lejos es \033[0;36m" + winnercities[1] + "\033[0;32m, a \033[0;33m" + str(minTrips) + "\033[0;32m paradas\033[0m\n"
+
+cProfile.run('getCentralStation()')
