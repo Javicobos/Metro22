@@ -168,31 +168,24 @@ def connectTwoStationsSecondWay(station1, station2):
 		return 0
 	bread = []
 	trips = 0
-	bread.append([(station1, isStationThere(station1))])
+	bread.append([(station1, 0)])
 	foundStationsSimpleList = [(station1, isStationThere(station1))]
 	while True:
 		nextTripLevel = []
 		for i,stationTuple in enumerate(bread[trips]):
-			#print stationTuple
-			#print "that is stationtuple"
 			for neighbor in connections[isStationThere(stationTuple[0])][1:]:
-				#print neighbor
 				if neighbor not in foundStationsSimpleList:
 					nextTripLevel.append((neighbor[0], i))
 					foundStationsSimpleList.append(neighbor)
-					#print foundStationsSimpleList
 					if neighbor[0] == station2:
 						j = i
 						toPrint = [neighbor[0]]
 						print "Puedes ir de " + station1 + ' a ' + station2 + " en " + str(trips + 1) + " viajes pasando por:"
 						while trips > -1:
-							#print bread[trips]
-							#print j
 							city,j = bread[trips][j]
 							trips -= 1
 							toPrint.append(city)
 						toPrint.reverse()
-						#print toPrint
 						for k,a in enumerate(toPrint):
 							print str(k) + ": " + a
 						return trips + 1
@@ -200,7 +193,7 @@ def connectTwoStationsSecondWay(station1, station2):
 		trips += 1
 
 
-cProfile.run('connectTwoStationsSecondWay("Sol", "Cuatro Caminos")')
+cProfile.run('connectTwoStationsSecondWay("Casa de Campo", "Hospital del Henares")')
 
 def longestFromStation(station):
 	bread = []
