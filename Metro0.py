@@ -193,7 +193,7 @@ def connectTwoStationsSecondWay(station1, station2):
 		trips += 1
 
 
-cProfile.run('connectTwoStationsSecondWay("Casa de Campo", "Hospital del Henares")')
+#cProfile.run('connectTwoStationsSecondWay("Casa de Campo", "Hospital del Henares")')
 
 def longestFromStation(station):
 	bread = []
@@ -250,7 +250,7 @@ def longestFromStation(station):
 
 #print longestFromStation("Casa de Campo")
 
-def getLongestTripSLow(): #very slow
+def getLongestTripSlow(): #very slow
 	maxTrips = 0
 	for i1,c1 in enumerate(connections):
 		for i2, c2 in enumerate(connections[i1 + 1:]):
@@ -264,10 +264,10 @@ def getLongestTripSLow(): #very slow
 def getLongestTripFast(): #fine but can be faster, slows down a lot with more stations added
 	maxTrips = 0
 	for c1 in connections:
-		candidate = longestFromStation(c1[0])
+		candidate = longestFromStation(c1[0][0])
 		if candidate[1] > maxTrips:
 			maxTrips = candidate[1]
-			winnercities = (c1[0], candidate[0])
+			winnercities = (c1[0][0], candidate[0])
 	print winnercities[0] + ", " + winnercities[1]
 	print maxTrips									#this could still be improved a lot if we remember which stations we visited while making a long trip
 													#because some of thsoe won't be candidates for a long trip anymore
