@@ -168,24 +168,31 @@ def connectTwoStationsSecondWay(station1, station2):
 		return 0
 	bread = []
 	trips = 0
-	bread.append([(station1,0)])
-	foundStationsSimpleList = [station1]
+	bread.append([(station1, isStationThere(station1))])
+	foundStationsSimpleList = [(station1, isStationThere(station1))]
 	while True:
 		nextTripLevel = []
 		for i,stationTuple in enumerate(bread[trips]):
+			#print stationTuple
+			#print "that is stationtuple"
 			for neighbor in connections[isStationThere(stationTuple[0])][1:]:
+				#print neighbor
 				if neighbor not in foundStationsSimpleList:
-					nextTripLevel.append((neighbor,i))
+					nextTripLevel.append((neighbor[0], i))
 					foundStationsSimpleList.append(neighbor)
-					if neighbor == station2:
+					#print foundStationsSimpleList
+					if neighbor[0] == station2:
 						j = i
-						toPrint = [neighbor]
+						toPrint = [neighbor[0]]
 						print "Puedes ir de " + station1 + ' a ' + station2 + " en " + str(trips + 1) + " viajes pasando por:"
 						while trips > -1:
+							#print bread[trips]
+							#print j
 							city,j = bread[trips][j]
 							trips -= 1
 							toPrint.append(city)
 						toPrint.reverse()
+						#print toPrint
 						for k,a in enumerate(toPrint):
 							print str(k) + ": " + a
 						return trips + 1
@@ -193,7 +200,7 @@ def connectTwoStationsSecondWay(station1, station2):
 		trips += 1
 
 
-#cProfile.run('connectTwoStationsSecondWay("Casa de Campo", "Hospital del Henares")')
+cProfile.run('connectTwoStationsSecondWay("Sol", "Cuatro Caminos")')
 
 def longestFromStation(station):
 	bread = []
@@ -329,7 +336,7 @@ def getCentralStation(): #raw, unoptimized for now
 			winnercities = (c1, candidate[0])
 	print "\n\033[0;32mLa estación mejor comunicada es \033[0;36m" + winnercities[0] + "\033[0;32m y la que tiene más lejos es \033[0;36m" + winnercities[1] + "\033[0;32m, a \033[0;33m" + str(minTrips) + "\033[0;32m paradas\033[0m\n"
 
-cProfile.run('getCentralStation()')
+#cProfile.run('getCentralStation()')
 
 #https://en.wikipedia.org/wiki/Graph_traversal
 #https://en.wikipedia.org/wiki/Travelling_salesman_problem looks like this is indeed very hard
